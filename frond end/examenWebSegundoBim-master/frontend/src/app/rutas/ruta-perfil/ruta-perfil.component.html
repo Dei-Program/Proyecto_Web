@@ -1,0 +1,40 @@
+<div class="row" style="text-align:center" >
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <h1 style="background: dodgerblue" align="center">
+      Perfil
+    </h1>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+<br><br>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-2" align="center">
+    <app-usuario></app-usuario>
+  </div>
+</div>
+<br><br>
+
+<div class="row" *ngFor="let peticion of peticiones">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6" >
+
+    <!--[nombre]="perfil.nombrePerfil"-->
+    <!--[urlImagen]="'/assets/imagenes/'+perfil.nombreImagen"-->
+    <!--(seleccionoCuenta)="irACuenta($event)"-->
+    <app-peticion></app-peticion>
+  </div>
+</div>
+
+<div class="row" *ngFor="let peticion of ofrecimientos">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6" >
+
+    <!--[nombre]="perfil.nombrePerfil"-->
+    <!--[urlImagen]="'/assets/imagenes/'+perfil.nombreImagen"-->
+    <!--(seleccionoCuenta)="irACuenta($event)"-->
+    <app-ofrecimiento></app-ofrecimiento>
+  </div>
+
+</div>

@@ -1,0 +1,8 @@
+<div class="row" style="background: azure">
+  <div class="col-sm-10"></div>
+  <div class="col-sm-1 perfil" (click)="verPerfil(idUsuario)">{{nombreUsuario}} </div>
+  <div class="col-sm-1">
+    <img class="perfil" [src]="urlImg" width="50%" alt="" (click)="verPerfil(idUsuario)"></div>
+</div>
+<br>
+<router-outlet></router-outlet>

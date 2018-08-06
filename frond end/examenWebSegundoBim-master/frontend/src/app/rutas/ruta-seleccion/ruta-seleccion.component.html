@@ -1,0 +1,42 @@
+<div class="row" style="text-align:center" >
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <h1 class="btn-info" align="center">
+      Selección de transferencia
+    </h1>
+  </div>
+  <div class="col-sm-2"></div>
+</div>
+<br><br>
+
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-4">
+    <h3>Usuario</h3>
+    <app-usuario></app-usuario>
+  </div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-6">
+    <h3>Conductor</h3>
+    <app-conductor></app-conductor>
+  </div>
+
+<br>
+</div>
+
+<div class="row">
+  <h3 >{{mostrando}}</h3>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-sm-3" *ngFor="let auto of autos">
+    <app-auto></app-auto>
+    <app-boton [nombreBoton]="botonAuto"></app-boton>
+    <br>
+  </div>
+</div>
+
+
+<br><br>
+<app-boton [nombreBoton]="botonCargar"></app-boton>

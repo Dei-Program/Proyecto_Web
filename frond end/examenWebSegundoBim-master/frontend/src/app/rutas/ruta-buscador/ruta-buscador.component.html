@@ -1,0 +1,79 @@
+<div class="row">
+  <h1><b>Busqueda</b></h1>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-12">
+    <nav class="navbar navbar-light bg-light">
+      <form class="form-check-inline" >
+        <input class="form-control mr-sm-3" type="search" placeholder="Search" size="100" aria-label="Search" >
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <h2>Usuarios</h2>
+  </div>
+
+  <div class="col-sm-3"  *ngFor="let usuario of usuarios">
+    <app-usuario></app-usuario>
+    <app-boton [nombreBoton]="botonUsuario"></app-boton>
+  </div>
+
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-1">
+    <app-boton nombreBoton="Anteriores"></app-boton>
+  </div>
+  <div class="col-sm-10"></div>
+  <div class="col-sm-1">
+    <app-boton nombreBoton="Siguientes"></app-boton>
+  </div>
+</div>
+<br><br><br>
+<div class="row">
+  <div class="col-sm-12">
+    <h2>Conductor</h2>
+  </div>
+
+  <div class="col-sm-3"  *ngFor="let conductor of conductores">
+    <app-conductor></app-conductor>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-1">
+    <app-boton nombreBoton="Anteriores"></app-boton>
+  </div>
+  <div class="col-sm-10"></div>
+  <div class="col-sm-1">
+    <app-boton nombreBoton="Siguientes"></app-boton>
+  </div>
+</div>
+
+<br><br><br>
+<div class="row">
+  <div class="col-sm-12">
+    <h2>Auto</h2>
+  </div>
+
+  <div class="col-sm-3"  *ngFor="let auto of autos">
+    <app-auto></app-auto>
+    <app-boton [nombreBoton]="botonAuto"></app-boton>
+  </div>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-sm-1">
+    <app-boton nombreBoton="Anteriores"></app-boton>
+  </div>
+  <div class="col-sm-10"></div>
+  <div class="col-sm-1">
+    <app-boton nombreBoton="Siguientes"></app-boton>
+  </div>
+</div>

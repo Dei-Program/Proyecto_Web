@@ -1,0 +1,52 @@
+<div style="text-align:center">
+  <h1 class="animated tada">
+    LOGIN
+  </h1>
+</div>
+<div class="row">
+  <br>
+  <br>
+</div>
+<div class="row">
+  <div class="col-sm-5"></div>
+  <div class="col-sm-2">
+    <form action="registro.html"
+          (ngSubmit)="crearUsuario(formularioLogin)"
+          #formularioLogin="ngForm">
+      <div align="center" >Nick:</div>
+      <div align="center">
+        <input type=nick
+               name="nick"
+               [(ngModel)]="nick"></div>
+      <div align="center" >Password:</div>
+      <div align="center">
+        <input type=password
+               name="password"
+               [(ngModel)]="password">
+      </div>
+      <div><br></div><br>
+      <div align="center">
+        <button class="btn btn-outline-primary" type="submit">
+          Ingresar
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-5"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-2">
+    <app-auto></app-auto>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-2">
+    <app-conductor></app-conductor>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-2">
+    <app-usuario></app-usuario>
+  </div>
+</div>
