@@ -1,0 +1,129 @@
+<div class="row">
+  <h1><b>Busqueda</b></h1>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-12">
+    <nav class="navbar navbar-light bg-light">
+      <form class="form-check-inline"
+            (ngSubmit)="buscarResultados(formularioBarra)"
+            #formularioBarra="ngForm">
+        <input class="form-control mr-sm-3" type="search" placeholder="Search" size="100" aria-label="Search"
+               name="palabraBusqueda" [(ngModel)]="palabraBusqueda">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
+    </nav>
+  </div>
+</div>
+
+<div *ngIf="todosUsuarios.length!==0" class="b-b">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Usuarios</h2>
+    </div>
+  </div>
+
+  <div class="row" *ngFor="let arreglo of todosUsuarios;let ind=index">
+    <div class="col-sm-3" *ngFor="let elemento of arreglo" >
+      <app-usuario
+        [nick]="elemento.nick"
+        *ngIf="indiceUsuarios==ind">
+      </app-usuario>
+      <app-boton [nombreBoton]="botonUsuario"
+                 (darClick)="visitarPerfil(elemento.id)"
+                 *ngIf="indiceUsuarios==ind">
+      </app-boton>
+    </div>
+  </div>
+
+
+  <br>
+  <div class="row">
+    <div class="col-sm-1">
+      <app-boton nombreBoton="Anteriores"
+                 (darClick)="mostrarMenosUsuarios()"></app-boton>
+    </div>
+    <div class="col-sm-10"></div>
+    <div class="col-sm-1">
+      <app-boton
+        nombreBoton="Siguientes"
+        (darClick)="mostrarMasUsuarios()"></app-boton>
+    </div>
+  </div>
+  <br>
+</div>
+
+<div *ngIf="todosConductores.length!==0" class="b-b">
+  <br><br>
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Conductor</h2>
+    </div>
+  </div>
+
+  <div class="row" *ngFor="let arreglo of todosConductores;let ind=index">
+    <div class="col-sm-3 b-r" *ngFor="let elemento of arreglo" >
+      <app-conductor
+        [nombre]="elemento.nombre+' '+elemento.apellido"
+        [campeonActual]="elemento.campeonActual"
+        [numeroMedallas]="elemento.numeroMedallas"
+        *ngIf="indiceConductores==ind">
+      </app-conductor>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-sm-1">
+      <app-boton nombreBoton="Anteriores"
+                 (darClick)="mostrarMenosConductores()"></app-boton>
+    </div>
+    <div class="col-sm-10"></div>
+    <div class="col-sm-1">
+      <app-boton nombreBoton="Siguientes"
+                 (darClick)="mostrarMasConductores()"></app-boton>
+    </div>
+  </div>
+  <br>
+</div>
+
+<div *ngIf="todosAutos.length!==0">
+  <br><br>
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Auto</h2>
+    </div>
+  </div>
+  <div class="row" *ngFor="let arreglo of todosAutos;let ind=index">
+    <div class="col-sm-3 b-r" *ngFor="let auto of arreglo" >
+      <app-auto
+        [anio]="auto.anio"
+        [chasis]="auto.chasis"
+        [colorDos]="auto.colorDos"
+        [colorUno]="auto.colorUno"
+        [nombreMarca]="auto.nombreMarca"
+        [nombreModelo]="auto.nombreModelo"
+        *ngIf="indiceAutos==ind">
+      </app-auto>
+      <app-boton [nombreBoton]="botonAuto"
+                 (darClick)="solicitarAuto(auto.id)"
+                 *ngIf="indiceAutos==ind">
+      </app-boton>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-sm-1">
+      <app-boton nombreBoton="Anteriores"
+                 (darClick)="mostrarMenosAutos()"></app-boton>
+    </div>
+    <div class="col-sm-10"></div>
+    <div class="col-sm-1">
+      <app-boton nombreBoton="Siguientes"
+                 (darClick)="mostrarMasAutos()"></app-boton>
+    </div>
+  </div>
+  <br><br>
+</div>

@@ -1,0 +1,37 @@
+<div class="row" style="text-align:center" >
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <h1 style="background: dodgerblue" align="center">
+      Perfil
+    </h1>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+<br><br>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-2" align="center">
+    <app-usuario
+    [nick]="nombreUsuario"
+    ></app-usuario>
+  </div>
+</div>
+<br><br>
+
+<div class="row b-b" *ngFor="let peticion of ofrecimientos">
+
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6" *ngIf="peticion!==null">
+    <app-peticion [identificador]="peticion.id"></app-peticion>
+  </div>
+</div>
+
+<div class="row b-b" *ngFor="let ofrecimiento of peticiones">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6" *ngIf="ofrecimiento!==null">
+    <app-ofrecimiento
+      [identificador]="ofrecimiento.id"
+    ></app-ofrecimiento>
+  </div>
+</div>
+<br>

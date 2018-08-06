@@ -1,0 +1,77 @@
+<div class="row" style="text-align:center" >
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <h1 class="btn-info" align="center">
+      Selección de transferencia
+    </h1>
+  </div>
+  <div class="col-sm-2"></div>
+</div>
+<br><br>
+
+<div class="row" *ngIf="usuario!==null">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-2">
+    <h3>Usuario</h3>
+    <app-usuario
+      [nick]="usuario.nick"></app-usuario>
+  </div>
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4" *ngIf="autoPedido!==null&&autoPedido!==undefined">
+    <h3>Item peticion</h3>
+    <br>
+    <app-auto
+    [anio]="autoPedido.anio"
+    [colorDos]="autoPedido.colorDos"
+    [colorUno]="autoPedido.colorUno"
+    [chasis]="autoPedido.chasis"
+    [nombreMarca]="autoPedido.nombreMarca"
+    [nombreModelo]="autoPedido.nombreModelo"
+    >
+    </app-auto>
+  </div>
+
+<br>
+</div>
+<div class="row">
+  <div
+    class="alert alert-warning"
+    role="alert"
+    *ngIf="solicitadorIgualPoseedor"
+  ><p>No puedes intercambiar para ti mismo</p>
+  </div>
+</div>
+
+<div class="row">
+  <h3 >{{autosMostrados}}</h3>
+</div>
+<br><br>
+
+<div class="row" *ngIf="autos.length!==0">
+  <div class="col-sm-3 b-r" *ngFor="let auto of autos;let i =index;">
+    <div *ngIf="i<rangoAutos&&i>=rangoAutos-4">
+      <app-auto
+        [nombreModelo]="auto.nombreModelo"
+        [nombreMarca]="auto.nombreMarca"
+        [chasis]="auto.chasis"
+        [colorUno]="auto.colorUno"
+        [colorDos]="auto.colorDos"
+        [anio]="auto.anio"
+      ></app-auto>
+      <app-boton
+        [nombreBoton]="botonAuto"
+        (darClick)="realizarTransferencia(auto.id)"
+        classe="btn btn-outline-info"
+      ></app-boton>
+
+      <br>
+    </div>
+
+  </div>
+</div>
+
+<br><br>
+<app-boton
+  [nombreBoton]="botonCargar"
+  (darClick)="cargarAutos()"
+></app-boton>

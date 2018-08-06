@@ -1,0 +1,62 @@
+<div class="row" style="text-align:center" >
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <h1 class="animated tada" align="center" style="background: deepskyblue">
+      Peticion de transferencia
+    </h1>
+  </div>
+  <div class="col-sm-2"></div>
+</div>
+<br><br>
+
+<div class="row" *ngIf="usuario!==undefined">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-2">
+    <h3>Usuario</h3>
+    <app-usuario
+      [nick]="usuario.nick"></app-usuario>
+  </div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-4">
+    <h3>Conductor</h3><br>
+    <app-conductor
+      [nombre]="usuario.conductores[0].nombre"
+      [campeonActual]="usuario.conductores[0].campeonActual"
+      [numeroMedallas]="usuario.conductores[0].numeroMedallas"
+    ></app-conductor>
+  </div>
+</div>
+
+<br>
+<div class="row">
+  <h3 >{{autosMostrados}}</h3>
+</div>
+<br><br>
+
+
+<div class="row" *ngIf="autos.length!==0">
+  <div class="col-sm-3 b-r" *ngFor="let auto of autos;let i=index;">
+    <div  *ngIf="i<rangoAutos&&i>=rangoAutos-4">
+      <app-auto
+        [nombreModelo]="auto.nombreModelo"
+        [nombreMarca]="auto.nombreMarca"
+        [chasis]="auto.chasis"
+        [colorUno]="auto.colorUno"
+        [colorDos]="auto.colorDos"
+        [anio]="auto.anio"
+      ></app-auto>
+      <app-boton
+        [nombreBoton]="botonAuto"
+        (darClick)="pedirAuto(auto.id)"
+        classe="btn btn-outline-primary"
+      ></app-boton>
+      <br>
+    </div>
+  </div>
+</div>
+
+<br><br>
+<app-boton
+  [nombreBoton]="botonCargar"
+  (darClick)="cargarAutos()"
+></app-boton>

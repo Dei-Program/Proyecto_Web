@@ -1,0 +1,54 @@
+<body style="background-color:#7256ff;">
+<div style="text-align:center">
+  <h1 class="animated tada">
+    SER SALUDABLE
+  </h1>
+
+</div>
+<div class="row">
+  <br>
+
+  <br>
+</div>
+
+
+<marquee><img src="https://www.lavanguardia.com/r/GODO/LV/p3/WebSite/2016/05/03/Recortada/img_msanoja_20160504-144748_imagenes_lv_getty_gettyimages-546127037_2-k7r-U401526493710pEB-992x558@LaVanguardia-Web.jpg"width="100" height="100"></marquee>
+
+<div class="row">
+      <div class="col-sm-5"></div>
+  <div class="col-sm-2">
+    <form action="registro.html"
+          (ngSubmit)="crearUsuario(formularioLogin)"
+          #formularioLogin="ngForm">
+      <div align="center" >Nick:</div>
+      <div align="center">
+        <input type=nick
+               name="nick"
+               [(ngModel)]="nick"></div>
+      <div align="center" >Password:</div>
+      <div align="center">
+        <input type=password
+               name="password"
+               [(ngModel)]="password">
+      </div>
+      <div><br></div><br>
+      <div align="center">
+        <button class="btn btn-outline-primary" type="submit">
+          Ingresar
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-5"></div>
+</div>
+
+<!--carrusel-->
+
+<!--<div class="row" *ngFor="let arreglo of arreglos;let ind=index">-->
+    <!--<div class="col-sm-3" *ngFor="let elemento of arreglo" >-->
+
+        <!--<app-usuario [nick]="elemento" *ngIf="i==ind"></app-usuario>-->
+
+    <!--</div>-->
+<!--</div>-->
+</body>

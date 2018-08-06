@@ -1,0 +1,39 @@
+<div class="row" *ngIf="peticion!==undefined&&peticion!==null">
+  <div class="col-sm-5">
+    <br><br><br>
+    <app-boton nombreBoton="aceptar"
+    (darClick)="aceptarPeticion(identificador)"
+    ></app-boton>
+    <br>
+    <app-boton nombreBoton="rechazar"
+    (darClick)="rechazarPeticion(identificador)"
+               classe="btn btn-danger"
+    ></app-boton>
+    <br>
+    <h3>Item de Petición</h3>
+    <app-auto
+      [anio]="autoSolicitado.anio"
+      [chasis]="autoSolicitado.chasis"
+      [colorDos]="autoSolicitado.colorDos"
+      [colorUno]="autoSolicitado.colorUno"
+      [nombreMarca]="autoSolicitado.nombreMarca"
+      [nombreModelo]="autoSolicitado.nombreModelo">
+    </app-auto>
+  </div>
+  <div class="col-sm-2">
+    <br><br><br><br><br><br><br><br>
+    <img class="img-fluid" src="/assets/imagenes/flecha.png" alt="">
+  </div>
+  <div class="col-sm-5">
+    <app-usuario [nick]="usuarioOfrece.nick"></app-usuario>
+    <h3>Item de Petición</h3>
+    <app-auto
+      [anio]="autoOfrecido.anio"
+      [chasis]="autoOfrecido.chasis"
+      [colorDos]="autoOfrecido.colorDos"
+      [colorUno]="autoOfrecido.colorUno"
+      [nombreMarca]="autoOfrecido.nombreMarca"
+      [nombreModelo]="autoOfrecido.nombreModelo">
+    </app-auto>
+  </div>
+</div>
